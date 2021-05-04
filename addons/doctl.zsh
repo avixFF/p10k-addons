@@ -8,7 +8,11 @@ function prompt_doctl() {
     local config_path="${XDG_CONFIG_HOME:-$HOME/.config}/doctl/config.yaml"
 
     if [[ -f "$config_path" ]]; then
-        local doctl_context="$(cat "$config_path" | grep -E '^context:' | cut -d ':' -f 2- | tr -d '[:space:]')"
+        if [[ -n "$DIGITALOCEAN_CONTEXT" ]]; then
+            local doctl_context="$DIGITALOCEAN_CONTEXT"
+        else
+            local doctl_context="$(cat "$config_path" | grep -E '^context:' | cut -d ':' -f 2- | tr -d '[:space:]')"
+        fi
 
         if $POWERLEVEL9K_DOCTL_HIDE_DEFAULT && [[ "$doctl_context" = "default" ]]; then
             return
