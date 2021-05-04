@@ -27,7 +27,7 @@ git clone https://github.com/lexuzieel/p10k-addons.git ~/.p10k-addons
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Load p10k prompt addons
-source ~/.p10k-addons/*.zsh
+source ~/.p10k-addons/addons/*.zsh
 ```
 
 ## Usage
