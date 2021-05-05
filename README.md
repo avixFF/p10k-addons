@@ -1,10 +1,14 @@
+<p align="center">
+    <img src="./resources/doctl-showcase.png">
+</p>
+
 # Powerlevel10k addons
 
 This is a collection of custom segments for [powerlevel10k](https://github.com/romkatv/powerlevel10k).
 
 ## List of the segments and their options
 
-- [doctl](https://github.com/digitalocean/doctl) - The official command line interface for the DigitalOcean API
+- [doctl](https://github.com/digitalocean/doctl) - The official command line interface for the DigitalOcean API 
   - **POWERLEVEL9K_DOCTL_HIDE_DEFAULT** (default: true)
     - Type: boolean
     - Description: Don't show segment when switched to the default context
@@ -39,10 +43,6 @@ typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     ... doctl
 )
 ```
-
-<p align="center">
-    <img src="./resources/doctl-showcase.png">
-</p>
 
 ## Upgrading
 
