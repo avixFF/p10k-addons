@@ -5,7 +5,11 @@ typeset -g POWERLEVEL9K_DOCTL_HIDE_DEFAULT=true
 typeset -g POWERLEVEL9K_DOCTL_SHOW_ON_COMMAND='doctl|terraform'
 
 function prompt_doctl() {
-    local config_path="${XDG_CONFIG_HOME:-$HOME/.config}/doctl/config.yaml"
+    if [[ "$(uname)" == "Darwin" ]]; then
+        local config_path="$HOME/Library/Application Support/doctl/config.yaml"
+    else
+        local config_path="${XDG_CONFIG_HOME:-$HOME/.config}/doctl/config.yaml"
+    fi
 
     if [[ -f "$config_path" ]]; then
         if [[ -n "$DIGITALOCEAN_CONTEXT" ]]; then
